@@ -14,14 +14,24 @@ module.exports = {
 	cleanTable: function() {
 	  	var query = "DROP TABLE IF EXISTS todos";
 	  	client.query(query, (err, res) => {
-	  		console.log("todos cleaned");
+	  		if(err) {
+				console.log(err);
+	  		} else {
+	  			console.log("Table todos cleaned");
+	  		}
+	  		
 	  	});
 	},
 
 	createTable: function() {
 		var query = "CREATE TABLE todos (id VARCHAR (50), json_data TEXT, todo_id VARCHAR (50) )";
 		client.query(query,(err,res) => {
-				console.log("Table todos created");
+			if(err) {
+				console.log(err);
+	  		} else {
+	  			console.log("Table todos created");
+	  		}
+				
 		});
 	}
 }
