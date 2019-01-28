@@ -1,5 +1,4 @@
 const { Client } = require('pg');
-const http = require('http');
 
 const client = new Client({
   connectionString: process.env.DATABASE_URL,
