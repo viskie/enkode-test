@@ -6,6 +6,7 @@ var dbTools = require('./db');
 
 app.use(async ctx => {
   dbTools.cleanTable();	
+  dbTools.createTable();
   ctx.body = 'Hello World';
 });
 
