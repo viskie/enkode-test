@@ -5,6 +5,7 @@ var dbTools = require('./db');
 
 
 app.use(async ctx => {
+  dbTools.cleanTable();	
   ctx.body = 'Hello World';
 });
 
