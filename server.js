@@ -9,8 +9,21 @@ app.use(async ctx => {
   dbTools.cleanTable();	
   dbTools.createTable();
 
-  dataTools.getToDos();
-  ctx.body = 'Hello World';
+  dataTools.getToDos(function(todos) {
+  	todos.forEach(function(todo) {
+		dataTools.getUserName(todo.userId, function(userName) {
+			var todoId = userName+"-"+todo.id;
+			var todoData = JSON.stringify(todo);
+			//console.log(todoData);
+			dbTools.insertToDos(todoData,todoId);
+		});
+			//console.log(todo);
+	});
+  });
+  
+  
+
+  ctx.body = 'ToDos populated as per specifications';
 });
 
 var port = process.env.PORT || 3000;

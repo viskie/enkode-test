@@ -23,12 +23,24 @@ module.exports = {
 	},
 
 	createTable: function() {
-		var query = "CREATE TABLE todos (id VARCHAR (50), json_data TEXT, todo_id VARCHAR (50) )";
+		var query = "CREATE TABLE todos (id SERIAL, json_data TEXT, todo_id VARCHAR (50) )";
 		client.query(query,(err,res) => {
 			if(err) {
 				console.log(err);
 	  		} else {
 	  			console.log("Table todos created");
+	  		}
+				
+		});
+	},
+
+	insertToDos: function(jsonData, todoId) {
+		var query = "INSERT INTO todos (json_data, todo_id) VALUES ('"+jsonData+"', '"+todoId+"' )";
+		client.query(query,(err,res) => {
+			if(err) {
+				console.log(err);
+	  		} else {
+	  			console.log("Todo id:"+todoId+" inserted to db");
 	  		}
 				
 		});
