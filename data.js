@@ -16,7 +16,6 @@ module.exports = {
 		      console.log('Status:', res.statusCode);
 		      return null;
 		    } else {
-		      //console.log(data);
 		      callback(data);
 		    }
 		});
@@ -36,7 +35,6 @@ module.exports = {
 		      console.log('Status:', res.statusCode);
 		      return null;
 		    } else {
-		      //console.log(data);
 		      callback(data.username);
 		    }
 		});

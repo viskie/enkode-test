@@ -14,10 +14,8 @@ app.use(async ctx => {
 		dataTools.getUserName(todo.userId, function(userName) {
 			var todoId = userName+"-"+todo.id;
 			var todoData = JSON.stringify(todo);
-			//console.log(todoData);
 			dbTools.insertToDos(todoData,todoId);
 		});
-			//console.log(todo);
 	});
   });
   
