@@ -1,0 +1,14 @@
+{
+  "name": "enkode-test",
+  "version": "0.0.1",
+  "description": "Enkode Interview Challenge",
+  "author": "Vishak Nair",
+  "license": "MIT",
+  "engines": {
+    "node": ">=8.0.0",
+    "npm": ">=3.5"
+  },
+  "dependencies": {
+    "koa": "latest"
+  }
+}
