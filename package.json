@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "koa": "latest",
-    "pg": "latest"
+    "pg": "latest",
+    "request": "latest"
   }
 }
